@@ -1,8 +1,8 @@
 <h1 align="center">CodeWars</h1>
 
 <div align="center">
-  <sub>Achiving code mastery through kata and coffee
   <a href="https://github.com/Dmitry-White">Dmitry White</a>
+  <sub>. Achiving code mastery through kata and coffee.
   </a>
 </div>
 
@@ -14,7 +14,7 @@ But my programming level does. And here's how.
 
 ## Description
 
-These are up-to-date solutions that I submited on Codewars. And it's pretty much "work in progress", since I'm following a very famous quote: </br>
+These are up-to-date solutions that I submited on Codewars. And it's pretty much "work in progress", since I follow a very famous quote: </br>
 > By continuously improving the design of code, we make it easier and easier to work with. </br>
 > This is in sharp contrast to what typically happens: little refactoring and a great deal of attention paid to expediently adding new features.</br>
 > If you get into the hygienic habit of refactoring continuously, you'll find that it is easier to extend and maintain code.</br>
