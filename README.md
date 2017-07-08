@@ -9,13 +9,24 @@
 
 <br/>
 
-CodeWar. CodeWar never changes.
+CodeWar. CodeWar never changes. </br>
 But my programming level does. And here's how.
 
 
-## The Idea
+## Description
 
-A place to store solutions as I work through CodeWars learning to code. Quality of solutions will vary as knowledge improves and I aim to visit many of these again to refine.
+These are up-to-date solutions that I submited on Codewars. And it's pretty much "work in progress", since I'm following a very famous quote: </br>
+> By continuously improving the design of code, we make it easier and easier to work with. </br>
+> This is in sharp contrast to what typically happens: little refactoring and a great deal of attention paid to expediently adding new features.</br>
+> If you get into the hygienic habit of refactoring continuously, you'll find that it is easier to extend and maintain code.</br>
+> - Joshua Kerievsky, *Refactoring to Patterns*</br>
+</br>
+</br>
+I mean it.</br>
+Seriously.
+
+
+
 
 ## Honors
 <a href="https://www.codewars.com/users/Dmitry-White" target="_blank"><img src="https://www.codewars.com/users/Dmitry-White/badges/large"></a>
