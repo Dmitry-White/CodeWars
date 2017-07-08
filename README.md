@@ -1,4 +1,3 @@
-# CodeWars
 <h1 align="center">CodeWars</h1>
 
 <div align="center">
