@@ -1,9 +1,10 @@
 <h1 align="center">CodeWars</h1>
 
 <div align="center">
+  <sub>
   <a href="https://github.com/Dmitry-White">Dmitry White</a>
-  <sub>. Achiving code mastery through kata and coffee.
-  </a>
+  Achiving code mastery through kata and coffee.
+  </sub>
 </div>
 
 <br/>
