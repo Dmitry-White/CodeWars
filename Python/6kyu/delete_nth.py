@@ -10,10 +10,11 @@ Created on Wed Jul  26 17:10:18 2017
 # drop the next [1,2] since this would lead to 1 and 2 being in the result 3 times,
 # and then take 3, which leads to [1,2,3,1,2,3].
 
-def delete_nth(order,max_e):
-    list = []
+
+def delete_nth(order, max_e):
+    my_list = []
     for item in order:
-        m = list.count(item)
+        m = my_list.count(item)
         if m < max_e:
-            list.append(item)
-    return list
+            my_list.append(item)
+    return my_list
