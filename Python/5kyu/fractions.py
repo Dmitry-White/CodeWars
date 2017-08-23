@@ -42,7 +42,9 @@ def mixed_fraction(s):
         denum = abs(denum)
         frac_sign.append('-')
 
+    print(num, denum)
     whole = num // denum
+    print(whole)
     new_num = num - whole * denum
     div = gcdRecur(new_num, denum)
 
@@ -58,6 +60,7 @@ def mixed_fraction(s):
     print(whole)
     if whole != 0:
         frac.append(str(whole))
+    print(frac)
     frac.append("/".join(frac_temp))
     digits = " ".join(frac)
     frac_sign.append(digits)
