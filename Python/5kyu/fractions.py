@@ -16,18 +16,11 @@ Created on Wed Aug  23 23:24:01 2017
 # In both of these cases, the resulting string must not contain any spaces.
 # Division by zero should raise an error (preferably, the standard zero division error of your language).
 
-
-def gcdRecur(a, b):
-    if b == 0:
-        return a
-    else:
-        return gcdRecur(b, a % b)
+from fractions import gcd
 
 
 def mixed_fraction(s):
-    l = s.split("/")
-    num = int(l[0])
-    denum = int(l[1])
+    num, denum = map(int, s.split("/"))
     frac = []
     frac_sign = []
 
@@ -35,18 +28,14 @@ def mixed_fraction(s):
         raise ZeroDivisionError
 
     if num < 0 and denum < 0:
-        num = abs(num)
-        denum = abs(denum)
+        num, denum = map(abs, (num, denum))
     elif num < 0 or denum < 0:
-        num = abs(num)
-        denum = abs(denum)
+        num, denum = map(abs, (num, denum))
         frac_sign.append('-')
 
-    print(num, denum)
     whole = num // denum
-    print(whole)
     new_num = num - whole * denum
-    div = gcdRecur(new_num, denum)
+    div = gcd(new_num, denum)
 
     if new_num == 0 or new_num == denum:
         if whole != 0:
@@ -57,10 +46,8 @@ def mixed_fraction(s):
             return str(whole)
 
     frac_temp = [str(new_num // div), str(denum // div)]
-    print(whole)
     if whole != 0:
         frac.append(str(whole))
-    print(frac)
     frac.append("/".join(frac_temp))
     digits = " ".join(frac)
     frac_sign.append(digits)
