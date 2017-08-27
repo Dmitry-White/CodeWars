@@ -15,14 +15,5 @@ Created on Sun Aug 27 23:53:51 2017
 
 
 def data_reverse(data):
-    l = len(data)
-    data_new = []
-    start = 0
-    end = l
-    for x in range(l, -1, -8):
-        start = x
-        if start != end:
-            [data_new.append(item) for item in data[start:end]]
-        end = x
-    return data_new
+    return [item for x in range(len(data),-1,-8) for item in data[x: x+8]]
 
