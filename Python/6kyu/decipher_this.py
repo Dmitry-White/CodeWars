@@ -29,14 +29,13 @@ def decipher_this(string):
             if letter.isalpha():
                 second.append(letter)
         num = chr(int("".join(first)))
-        if second != []:
+        if second is not False:
             if len(second) > 1:
                 temp = second[0]
                 second[0] = second[-1]
                 second[-1] = temp
             alpha = "".join(second)
         final = final + num + alpha + ' '
-        num = ''
         alpha = ''
         del first[:]
         del second[:]
