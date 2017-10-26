@@ -8,7 +8,7 @@
   * returns a function which returns n.
   */
 
-function always (n) {
+function always(n) {
     return () => {
         return n;
     }
