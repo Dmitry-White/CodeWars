@@ -2,8 +2,7 @@
 
 <div align="center">
   <sub>
-  <a href="https://github.com/Dmitry-White">Dmitry White</a>
-  . Achiving code mastery through kata and coffee.
+    <a href="https://github.com/Dmitry-White">Dmitry White</a>. Achiving code mastery through kata and coffee.
   </sub>
 </div>
 
