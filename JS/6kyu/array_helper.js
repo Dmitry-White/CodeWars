@@ -38,9 +38,9 @@ Array.prototype.sum = function() {
     },0);
 }
 Array.prototype.average = function() {
-    return Math.floor(this.reduce((a, b) => {
+    return this.reduce((a, b) => {
         return a + b;
-    },0)/this.length);
+    },0)/this.length;
 }
 Array.prototype.even = function() {
     return this.filter((elem) => {
