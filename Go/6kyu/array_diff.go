@@ -1,5 +1,14 @@
+/*
+Created on Fri Feb 17 20:01:01 2023
+@author: Dmitry White
+*/
 package kata
 
+/*
+	TODO: Implement a difference function,
+	which subtracts one list from another
+	and returns the result.
+*/
 func ArrayDiff(a, b []int) []int {
 	for _, bItem := range b {
 
