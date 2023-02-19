@@ -2,7 +2,7 @@
 Created on Sun Feb 19 20:30:28 2023
 @author: Dmitry White
 */
-package main
+package kata
 
 import "strings"
 
