@@ -1,3 +1,7 @@
+/*
+Created on Sun Feb 19 20:20:03 2023
+@author: Dmitry White
+*/
 package kata
 
 import (
@@ -5,12 +9,14 @@ import (
 	"strings"
 )
 
-func sortStrings(arr []string) []string {
-	sort.Slice(arr, func(i, j int) bool {
-		return arr[i] < arr[j]
-	})
-	return arr
-}
+/*
+TODO: Given a list of strings, sort it alphabetically
+(case-sensitive, and based on the ASCII values of the chars)
+and then return the first value.
+The returned value must be a string,
+and have "***" between each of its letters.
+Do not remove or add elements from/to the array.
+*/
 
 func modifyString(str string) string {
 	strArr := strings.Split(str, "")
@@ -19,7 +25,7 @@ func modifyString(str string) string {
 }
 
 func TwoSort(arr []string) string {
-	sortedArr := sortStrings(arr)
-	modifiedStr := modifyString(sortedArr[0])
+	sort.Strings(arr)
+	modifiedStr := modifyString(arr[0])
 	return modifiedStr
 }
