@@ -1,9 +1,22 @@
+/*
+Created on Tue Feb 21 20:41:11 2023
+@author: Dmitry White
+*/
 package main
 
 import (
 	"fmt"
 	"strings"
 )
+
+/*
+	TODO: Write a function which formats a duration, given as a number of seconds, in a human-friendly way.
+	The function must accept a non-negative integer. If it is zero, it just returns "now".
+	Otherwise, the duration is expressed as a combination of years, days, hours, minutes and seconds.
+	A year is 365 days and a day is 24 hours.
+		* For seconds = 62, function should return "1 minute and 2 seconds"
+		* For seconds = 3662, function should return "1 hour, 1 minute and 2 seconds"
+*/
 
 const (
 	SECOND = 1
@@ -29,6 +42,7 @@ type LanguageForms struct {
 }
 
 type DateParts struct {
+	now     string
 	seconds string
 	minutes string
 	hours   string
@@ -37,6 +51,7 @@ type DateParts struct {
 }
 
 var DurationKeys = DateParts{
+	now:     "now",
 	seconds: "seconds",
 	minutes: "minutes",
 	hours:   "hours",
@@ -132,6 +147,10 @@ func (f *Duration) prettify() Duration {
 }
 
 func FormatDuration(seconds int64) string {
+	if seconds == 0 {
+		return DurationKeys.now
+	}
+
 	humanFormat := Duration{seconds: seconds}
 
 	humanFormat.computeDate()
