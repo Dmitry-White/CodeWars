@@ -1,0 +1,21 @@
+/*
+Created on Wed Feb 22 18:02:11 2023
+@author: Dmitry White
+*/
+
+package kata
+
+/*
+	TODO: Consider an array/list of sheep where some sheep may be missing from their place.
+	We need a function that counts the number of sheep present in the array (true means present).
+*/
+
+func CountSheeps(numbers []bool) int {
+	count := 0
+	for _, v := range numbers {
+		if v {
+			count++
+		}
+	}
+	return count
+}
