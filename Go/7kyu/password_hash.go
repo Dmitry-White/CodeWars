@@ -2,12 +2,11 @@
 Created on Fri Feb 24 01:05:27 2023
 @author: Dmitry White
 */
-package main
+package kata
 
 import (
 	"crypto/md5"
-	"encoding/hex"
-	"io"
+	"fmt"
 )
 
 /*
@@ -15,12 +14,7 @@ TODO: Create the function that converts a given string into an md5 hash.
 The return value should be encoded in hexadecimal.
 */
 func PassHash(str string) string {
-	hash := md5.New()
-	io.WriteString(hash, str)
+	hash := md5.Sum([]byte(str))
 
-	src := hash.Sum(nil)
-	dst := make([]byte, hex.EncodedLen(len(src)))
-	hex.Encode(dst, src)
-
-	return string(dst)
+	return fmt.Sprintf("%x", hash)
 }
