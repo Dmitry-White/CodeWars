@@ -14,10 +14,8 @@ import "strings"
 const vowels = "aeiou"
 
 func GetCount(str string) (count int) {
-	strArr := strings.Split(str, "")
-
-	for _, char := range strArr {
-		if strings.Contains(vowels, char) {
+	for _, char := range str {
+		if strings.Contains(vowels, string(char)) {
 			count++
 		}
 	}
