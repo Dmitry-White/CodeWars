@@ -14,17 +14,13 @@ function partitionOn(pred, items) {
   const falsePart = [];
   const truePart = [];
 
-  items.forEach((item) => {
-    if (pred(item)) {
-      truePart.push(item);
-    } else {
-      falsePart.push(item);
-    }
-  });
+  items.forEach((item) =>
+    pred(item) ? truePart.push(item) : falsePart.push(item)
+  );
 
   items.length = 0;
-  falsePart.forEach((item) => items.push(item));
-  truePart.forEach((item) => items.push(item));
+  items.push(...falsePart);
+  items.push(...truePart);
 
   return falsePart.length;
 }
