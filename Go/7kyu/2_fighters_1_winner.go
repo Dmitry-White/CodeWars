@@ -2,9 +2,7 @@
 Created on Tue Feb 28 19:40:03 2023
 @author: Dmitry White
 */
-package main
-
-import "fmt"
+package kata
 
 /*
 	TODO: Create a function that returns the name of the winner in a fight between two fighters.
@@ -53,13 +51,4 @@ func DeclareWinner(fighter1 Fighter, fighter2 Fighter, firstAttacker string) str
 	}
 
 	return winner
-}
-
-func main() {
-	fmt.Println(DeclareWinner(Fighter{"Lew", 10, 2}, Fighter{"Harry", 5, 4}, "Lew"))        // Lew
-	fmt.Println(DeclareWinner(Fighter{"Lew", 10, 2}, Fighter{"Harry", 5, 4}, "Harry"))      // Harry
-	fmt.Println(DeclareWinner(Fighter{"Harald", 20, 5}, Fighter{"Harry", 5, 4}, "Harry"))   // Harald
-	fmt.Println(DeclareWinner(Fighter{"Harald", 20, 5}, Fighter{"Harry", 5, 4}, "Harald"))  // Harald
-	fmt.Println(DeclareWinner(Fighter{"Jerry", 30, 3}, Fighter{"Harald", 20, 5}, "Jerry"))  // Harald
-	fmt.Println(DeclareWinner(Fighter{"Jerry", 30, 3}, Fighter{"Harald", 20, 5}, "Harald")) // Harald
 }

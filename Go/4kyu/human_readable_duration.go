@@ -2,7 +2,7 @@
 Created on Tue Feb 21 20:41:11 2023
 @author: Dmitry White
 */
-package main
+package kata
 
 import (
 	"fmt"

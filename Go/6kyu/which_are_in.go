@@ -2,7 +2,7 @@
 Created on Mon Feb 20 21:34:22 2023
 @author: Dmitry White
 */
-package main
+package kata
 
 import (
 	"sort"

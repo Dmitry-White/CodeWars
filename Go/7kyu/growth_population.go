@@ -2,7 +2,7 @@
 Created on Sun Feb 26 16:30:52 2023
 @author: Dmitry White
 */
-package main
+package kata
 
 /*
 	TODO: In a small town the population is `p0` at the beginning of a year.

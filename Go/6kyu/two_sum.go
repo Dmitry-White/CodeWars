@@ -2,7 +2,7 @@
 Created on Sun Feb 26 13:01:02 2023
 @author: Dmitry White
 */
-package main
+package kata
 
 /*
 	TODO: Write a function that takes an array of numbers (integers for the tests) and a target number.
