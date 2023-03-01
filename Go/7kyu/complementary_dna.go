@@ -13,21 +13,13 @@ import "strings"
 	DNA strand is never empty or there is no DNA at all.
 */
 
+var complementaryDNA = strings.NewReplacer(
+	"A", "T",
+	"T", "A",
+	"C", "G",
+	"G", "C",
+)
+
 func DNAStrand(dna string) string {
-	strArr := strings.Split(dna, "")
-
-	for i := range strArr {
-		switch strArr[i] {
-		case "A":
-			strArr[i] = "T"
-		case "T":
-			strArr[i] = "A"
-		case "C":
-			strArr[i] = "G"
-		case "G":
-			strArr[i] = "C"
-		}
-	}
-
-	return strings.Join(strArr, "")
+	return complementaryDNA.Replace(dna)
 }
