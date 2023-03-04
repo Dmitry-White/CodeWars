@@ -111,6 +111,20 @@ func ProperFractions(n int) int {
 	return count
 }
 
+func ProperFractionsMemo(n int) int {
+	result := memoize(GCDRecursion)
+	denominator := n
+	count := 0
+
+	for numerator := 1; numerator < denominator; numerator++ {
+		if result.call(numerator, denominator) == 1 {
+			count++
+		}
+	}
+
+	return count
+}
+
 func with(algorithm func(int, int) int) func(int) int {
 	return func(n int) int {
 		denominator := n
@@ -126,18 +140,59 @@ func with(algorithm func(int, int) int) func(int) int {
 	}
 }
 
-func ProperFractionsMemo(n int) int {
-	result := memoize(GCDRecursion)
-	denominator := n
-	count := 0
+/*
+Euler's totient function
 
-	for numerator := 1; numerator < denominator; numerator++ {
-		if result.call(numerator, denominator) == 1 {
-			count++
+	Euler’s totient function counts the total numbers between 1 to N, which are coprime to `N`.
+	Two numbers are said to be coprime if the GCD(Greatest Common Divisor) of both the numbers is 1.
+
+	https://en.wikipedia.org/wiki/Euler%27s_totient_function
+	https://www.codingninjas.com/codestudio/library/euler-s-totient-function
+
+
+	There are generally two approaches to this function:
+	1. Iteratively counting the numbers `k ≤ n` such that `gcd(n,k) = 1`.
+	2. Using the Euler product formula.
+
+	Usage of the Euler product formula:
+	This is an explicit formula for calculating `φ(n)` depending on the prime divisor of n:
+	`φ(n) = n * Product (1 - 1/p)` where the product is taken over the primes `p ≤ n` that divide `n`.
+	For example: `φ(36) = 36 * (1 - 1/2) * (1 - 1/3) = 36 * 1/2 * 2/3 = 12`.
+
+	Time Complexity: The time complexity is `O(√N)` because we are running an `O(√N)` for loop only.
+	Space Complexity: The space complexity is `O(1)` because we are using constant auxiliary space.
+*/
+func Phi(n int64) int64 {
+	result := n
+
+	// Iterating till the square root of 'n'
+	for i := int64(2); i*i <= n; i++ {
+		//	If 'i' is a factor of 'n'
+		if n%i == 0 {
+			for {
+				if n%i != 0 {
+					break
+				}
+				n /= i
+			}
+			result -= result / i
 		}
 	}
 
-	return count
+	if n > 1 {
+		result -= result / n
+	}
+	return result
+}
+
+func ProperFractionsEuler(n int) int {
+	if n == 1 {
+		return 0
+	}
+
+	count := Phi(int64(n))
+
+	return int(count)
 }
 
 func main() {
@@ -172,5 +227,10 @@ func main() {
 	elapsed5 := time.Since(start5)
 	fmt.Println("Time 5: ", elapsed5)
 
-	// fmt.Println("Cache: ", cache, len(cache))
+	start6 := time.Now()
+	fmt.Println(ProperFractionsEuler(9999999))
+	elapsed6 := time.Since(start6)
+	fmt.Println("Time 6: ", elapsed6)
+
+	fmt.Println("Cache Size: ", len(cache))
 }
