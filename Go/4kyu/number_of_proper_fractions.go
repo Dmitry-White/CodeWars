@@ -163,25 +163,29 @@ Euler's totient function
 	Space Complexity: The space complexity is `O(1)` because we are using constant auxiliary space.
 */
 func Phi(n int64) int64 {
+	// Initialize result as n
 	result := n
 
-	// Iterating till the square root of 'n'
-	for i := int64(2); i*i <= n; i++ {
-		//	If 'i' is a factor of 'n'
-		if n%i == 0 {
-			for {
-				if n%i != 0 {
-					break
-				}
-				n /= i
+	// Remove all factors p of n where p < sqrt(n)
+	for p := int64(2); p*p <= n; p++ {
+		// Check if p is a factor of n.
+		if n%p == 0 {
+			// Remove factor p and all its multiples from n
+			for n%p == 0 {
+				n /= p
 			}
-			result -= result / i
+			// Count multiples of p and remove from result
+			result -= (result / p)
 		}
 	}
 
+	// If a factor still exists, this must be a relative prime
+	// (since all factors < sqrt(n) has been removed)
 	if n > 1 {
-		result -= result / n
+		// Remove all its multiples from result
+		result -= (result / n)
 	}
+
 	return result
 }
 
