@@ -11,12 +11,12 @@ import (
 )
 
 /*
-Write a function which given a control string
-will return the error rate of the printer as a string
-representing a rational whose numerator is the number of errors and
-the denominator the length of the control string.
-Don't reduce this fraction to a simpler expression.
-Good control string contains only characters from 'a' to 'm'.
+	TODO: Write a function which given a control string
+	will return the error rate of the printer as a string
+	representing a rational whose numerator is the number of errors and
+	the denominator the length of the control string.
+	Don't reduce this fraction to a simpler expression.
+	Good control string contains only characters from 'a' to 'm'.
 */
 
 var controlStringRegex = regexp.MustCompile(`[a-m]+`)
